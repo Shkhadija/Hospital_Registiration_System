@@ -1,0 +1,82 @@
+﻿@page "{id:int}"
+@model HospitalRegistrationSystem.Pages.Patients.DetailsModel
+
+@{
+    ViewData["Title"] = "Patient Details";
+}
+
+<section class="py-5">
+    <div class="container">
+
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h1 class="display-5 fw-bold">👤 Patient Details</h1>
+                <p class="text-muted mb-0">
+                    View complete patient information.
+                </p>
+            </div>
+
+            <a asp-page="Index"
+               class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                ← Back to Patients
+            </a>
+        </div>
+
+        <!-- Patient Card -->
+        <div class="card border-0 shadow-lg rounded-4">
+            <div class="card-body p-5">
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <label class="text-muted">Full Name</label>
+                        <div class="fw-bold fs-5">@Model.Patient.FullName</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="text-muted">Gender</label>
+                        <div>@Model.Patient.Gender</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="text-muted">Phone</label>
+                        <div>@Model.Patient.Phone</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="text-muted">Email</label>
+                        <div>@Model.Patient.Email</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="text-muted">Address</label>
+                        <div>@Model.Patient.Address</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="text-muted">Created At</label>
+                        <div>@Model.Patient.CreatedAt.ToString("dd.MM.yyyy HH:mm")</div>
+                    </div>
+
+                </div>
+
+                <div class="mt-5 d-flex gap-3">
+                    <a asp-page="Edit"
+                       asp-route-id="@Model.Patient.Id"
+                       class="btn btn-warning btn-lg rounded-pill px-4">
+                        ✏ Edit
+                    </a>
+
+                    <a asp-page="Delete"
+                       asp-route-id="@Model.Patient.Id"
+                       class="btn btn-danger btn-lg rounded-pill px-4">
+                        🗑 Delete
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

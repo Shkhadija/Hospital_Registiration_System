@@ -1,0 +1,102 @@
+﻿@page "{doctorSlug}"
+@model HospitalRegistrationSystem.Pages.Appointments.CreateModel
+
+@{
+    ViewData["Title"] = "Book Appointment";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-5">
+
+                    <h2 class="fw-bold text-primary mb-3">
+                        📅 Book Appointment
+                    </h2>
+
+                    @if (Model.Doctor != null)
+                    {
+                        <div class="alert alert-info rounded-4">
+                            <strong>Doctor:</strong> @Model.Doctor.FullName
+                            <br />
+                            <strong>Specialty:</strong> @Model.Doctor.Specialty
+                        </div>
+                    }
+
+                    <form method="post">
+
+                        <div asp-validation-summary="All"
+                             class="text-danger mb-3"></div>
+
+                        <!-- Appointment Date -->
+                        <div class="mb-3">
+                            <label asp-for="Appointment.AppointmentDate"
+                                   class="form-label">
+                                Appointment Date
+                            </label>
+
+                            <input asp-for="Appointment.AppointmentDate"
+                                   type="date"
+                                   class="form-control" />
+
+                            <span asp-validation-for="Appointment.AppointmentDate"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <!-- Appointment Time -->
+                        <div class="mb-3">
+                            <label asp-for="SelectedTime"
+                                   class="form-label">
+                                Appointment Time
+                            </label>
+
+                            <select asp-for="SelectedTime"
+                                    asp-items="Model.TimeSlots"
+                                    class="form-select">
+                            </select>
+
+                            <span asp-validation-for="SelectedTime"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="mb-3">
+                            <label asp-for="Appointment.Notes"
+                                   class="form-label">
+                                Notes
+                            </label>
+
+                            <textarea asp-for="Appointment.Notes"
+                                      class="form-control"
+                                      rows="4"
+                                      placeholder="Describe your symptoms (optional)"></textarea>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex gap-2">
+                            <button type="submit"
+                                    class="btn btn-primary px-4">
+                                Confirm Appointment
+                            </button>
+
+                            <a asp-page="/Doctors/Details"
+                               asp-route-slug="@Model.Doctor?.Slug"
+                               class="btn btn-outline-secondary">
+                                Cancel
+                            </a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

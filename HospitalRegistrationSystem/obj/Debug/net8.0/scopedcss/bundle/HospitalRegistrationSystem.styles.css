@@ -1,0 +1,43 @@
+/* _content/HospitalRegistrationSystem/Pages/Shared/_Layout.cshtml.rz.scp.css */
+/* Layout-specific overrides */
+
+a.navbar-brand[b-ubbfxhci7g] {
+    white-space: normal;
+    word-break: break-all;
+}
+
+a[b-ubbfxhci7g] {
+    color: #0056b3;
+}
+
+    a:hover[b-ubbfxhci7g] {
+        color: #003d82;
+    }
+
+.btn-primary[b-ubbfxhci7g] {
+    color: #fff;
+}
+
+.nav-pills .nav-link.active[b-ubbfxhci7g],
+.nav-pills .show > .nav-link[b-ubbfxhci7g] {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #003d82;
+}
+
+.border-top[b-ubbfxhci7g] {
+    border-top: 1px solid #d6e4f0 !important;
+}
+
+.border-bottom[b-ubbfxhci7g] {
+    border-bottom: 1px solid #d6e4f0 !important;
+}
+
+.box-shadow[b-ubbfxhci7g] {
+    box-shadow: 0 .25rem .75rem rgba(0, 86, 179, .08);
+}
+
+button.accept-policy[b-ubbfxhci7g] {
+    font-size: 1rem;
+    line-height: inherit;
+}

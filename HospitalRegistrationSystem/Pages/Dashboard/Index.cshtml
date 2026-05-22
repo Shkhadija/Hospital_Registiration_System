@@ -1,0 +1,220 @@
+@page
+@model HospitalRegistrationSystem.Pages.Dashboard.IndexModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-4">
+
+    <!-- Welcome Banner -->
+    <div class="hero-banner mb-4">
+        <h1 class="display-6 fw-bold mb-2">
+            Welcome, @User.Identity?.Name 👋
+        </h1>
+
+        <p class="mb-0">
+            @if (User.IsInRole("Admin"))
+            {
+                <text>Hospital Management Dashboard</text>
+            }
+            else if (User.IsInRole("Patient"))
+            {
+                <text>Your Personal Patient Portal</text>
+            }
+            else if (User.IsInRole("Doctor"))
+            {
+                <text>Doctor Dashboard</text>
+            }
+            else if (User.IsInRole("Receptionist"))
+            {
+                <text>Reception Dashboard</text>
+            }
+        </p>
+    </div>
+
+    <!-- =========================
+         ADMIN / RECEPTIONIST DASHBOARD
+         ========================= -->
+    @if (User.IsInRole("Admin") || User.IsInRole("Receptionist"))
+    {
+        <!-- Statistik Kartlar -->
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="card dashboard-card h-100">
+                    <div class="card-body">
+                        <h6 class="text-muted">Total Patients</h6>
+                        <h2 class="fw-bold">@Model.TotalPatients</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card dashboard-card h-100">
+                    <div class="card-body">
+                        <h6 class="text-muted">Total Doctors</h6>
+                        <h2 class="fw-bold">@Model.TotalDoctors</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card dashboard-card h-100">
+                    <div class="card-body">
+                        <h6 class="text-muted">Appointments</h6>
+                        <h2 class="fw-bold">@Model.TotalAppointments</h2>
+                    </div>
+                </div>
+            </div>
+
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="col-md-3">
+                    <div class="card dashboard-card h-100">
+                        <div class="card-body">
+                            <h6 class="text-muted">System Users</h6>
+                            <h2 class="fw-bold">@Model.TotalUsers</h2>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="row g-4 mt-2">
+            <div class="col-md-3">
+                <div class="card border-0 bg-light h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="display-6 text-primary mb-3">👥</div>
+                        <h5 class="fw-bold">Manage Patients</h5>
+                        <p class="text-muted small mb-3">View and register patients.</p>
+                        <a asp-page="/Patients/Index" class="btn btn-sm btn-outline-primary rounded-pill">Go to Patients</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 bg-light h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="display-6 text-success mb-3">👨‍⚕️</div>
+                        <h5 class="fw-bold">Manage Doctors</h5>
+                        <p class="text-muted small mb-3">View and add doctors.</p>
+                        <a asp-page="/Doctors/Index" class="btn btn-sm btn-outline-success rounded-pill">Go to Doctors</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 bg-light h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="display-6 text-warning mb-3">📅</div>
+                        <h5 class="fw-bold">Appointments</h5>
+                        <p class="text-muted small mb-3">Manage appointments.</p>
+                        <a asp-page="/Appointments/Index" class="btn btn-sm btn-outline-warning rounded-pill">Go to Appointments</a>
+                    </div>
+                </div>
+            </div>
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="col-md-3">
+                    <div class="card border-0 bg-light h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="display-6 text-danger mb-3">⚙️</div>
+                            <h5 class="fw-bold">System Users</h5>
+                            <p class="text-muted small mb-3">Manage system users.</p>
+                            <a asp-page="/Admin/Users" class="btn btn-sm btn-outline-danger rounded-pill">Go to Users</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card dashboard-card mt-4">
+            <div class="card-body">
+                <h5 class="fw-bold mb-3">Recent Activity</h5>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">✅ New patient registered</li>
+                    <li class="list-group-item">🩺 Doctor schedule updated</li>
+                    <li class="list-group-item">📅 Appointment created</li>
+                    <li class="list-group-item">💳 Payment recorded</li>
+                </ul>
+            </div>
+        </div>
+    }
+
+    <!-- =========================
+         PATIENT DASHBOARD
+         ========================= -->
+    @if (User.IsInRole("Patient"))
+    {
+        <div class="card dashboard-card mt-4">
+            <div class="card-body p-4">
+                <h3 class="fw-bold mb-3">
+                    👋 Welcome to your patient portal
+                </h3>
+
+                <p class="text-muted">
+                    Here you can view your appointments,
+                    book a new appointment, and browse doctors.
+                </p>
+
+                <div class="row g-4 mt-2">
+
+                    <div class="col-md-6">
+                        <div class="card border-0 bg-light h-100">
+                            <div class="card-body">
+                                <h5 class="fw-bold">📅 My Appointments</h5>
+                                <p class="text-muted mb-3">
+                                    View your upcoming and past appointments.
+                                </p>
+                                <a asp-page="/Appointments/MyAppointments"
+                                   class="btn btn-primary rounded-pill">
+                                    View Appointments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-0 bg-light h-100">
+                            <div class="card-body">
+                                <h5 class="fw-bold">👨‍⚕️ Browse Doctors</h5>
+                                <p class="text-muted mb-3">
+                                    Find specialists and book appointments.
+                                </p>
+                                <a asp-page="/Doctors/Index"
+                                   class="btn btn-outline-primary rounded-pill">
+                                    View Doctors
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- =========================
+         DOCTOR DASHBOARD
+         ========================= -->
+    @if (User.IsInRole("Doctor"))
+    {
+        <div class="card dashboard-card mt-4">
+            <div class="card-body p-4">
+                <h3 class="fw-bold mb-3">🩺 Doctor Portal</h3>
+                <p class="text-muted">
+                    Manage your appointments and schedule.
+                </p>
+
+                <a asp-page="/Appointments/MyAppointments"
+                   class="btn btn-primary rounded-pill">
+                    View My Appointments
+                </a>
+            </div>
+        </div>
+    }
+
+</div>

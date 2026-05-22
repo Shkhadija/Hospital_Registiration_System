@@ -1,0 +1,143 @@
+﻿@page
+@model HospitalRegistrationSystem.Pages.Doctors.IndexModel
+
+@{
+    ViewData["Title"] = "Doctors";
+}
+
+<div class="container mt-4">
+
+    <!-- Səhifə başlığı -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold mb-1">👨‍⚕️ Doctors</h1>
+            <p class="text-muted mb-0">
+                View and manage hospital doctors.
+            </p>
+        </div>
+
+        <!-- Yalnız Admin doctor əlavə edə bilər -->
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-page="/Doctors/Create"
+               class="btn btn-primary rounded-pill px-4">
+                ➕ Add Doctor
+            </a>
+        }
+    </div>
+
+    <!-- Axtarış -->
+    <div class="card shadow-sm border-0 rounded-4 mb-4">
+        <div class="card-body">
+            <form method="get">
+                <div class="row g-3">
+                    <div class="col-md-10">
+                        <input type="text"
+                               name="search"
+                               value="@Model.Search"
+                               class="form-control"
+                               placeholder="Search by doctor name or specialty..." />
+                    </div>
+
+                    <div class="col-md-2 d-grid">
+                        <button type="submit"
+                                class="btn btn-outline-primary">
+                            🔍 Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Həkim kartları -->
+    <div class="row g-4">
+
+        @if (Model.Doctors != null && Model.Doctors.Any())
+        {
+            @foreach (var doctor in Model.Doctors)
+            {
+                <div class="col-md-4">
+                    <div class="card dashboard-card h-100">
+
+                        <!-- Həkim şəkli -->
+                        <img src="@(string.IsNullOrWhiteSpace(doctor.ImageUrl)
+                                                         ? "/images/default-doctor.png"
+                                                         : doctor.ImageUrl)"
+                     class="card-img-top"
+                     style="height: 250px; object-fit: cover;"
+                     alt="@doctor.FullName" />
+
+                        <div class="card-body">
+
+                            <!-- Həkimin adı -->
+                            <h5 class="fw-bold mb-1">
+                                @doctor.FullName
+                            </h5>
+
+                            <!-- İxtisas -->
+                            <p class="text-primary fw-semibold mb-2">
+                                @doctor.Specialty
+                            </p>
+
+                            <!-- Təcrübə -->
+                            <p class="text-muted mb-2">
+                                🏆 @doctor.ExperienceYears years experience
+                            </p>
+
+                            <!-- Status -->
+                            <span class="badge bg-success mb-3">
+                                @doctor.Status
+                            </span>
+
+                            <!-- Düymələr -->
+                            <div class="d-grid gap-2 mt-3">
+
+                                <!-- Hər kəs profilə baxa bilər -->
+                                <a asp-page="/Doctors/Details"
+                                   asp-route-slug="@doctor.Slug"
+                                   class="btn btn-outline-primary rounded-pill">
+                                    View Profile
+                                </a>
+
+                                <!-- Yalnız Admin Edit/Delete görə bilər -->
+                        @if (User.IsInRole("Admin"))
+                                {
+                                    <a asp-page="/Doctors/Edit"
+                                       asp-route-slug="@doctor.Slug"
+                                       class="btn btn-outline-warning rounded-pill">
+                                        Edit
+                                    </a>
+
+                                    <a asp-page="/Doctors/Delete"
+                                       asp-route-slug="@doctor.Slug"
+                                       class="btn btn-outline-danger rounded-pill">
+                                        Delete
+                                    </a>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <!-- Heç bir doctor yoxdursa -->
+            <div class="col-12">
+                <div class="alert alert-info rounded-4 shadow-sm">
+                    No doctors found.
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-page="/Doctors/Create" class="fw-bold">
+                            Add the first doctor
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

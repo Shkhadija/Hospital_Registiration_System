@@ -1,0 +1,30 @@
+﻿@page "{slug}"
+@model HospitalRegistrationSystem.Pages.Doctors.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Doctor";
+}
+
+<div class="container mt-4">
+    <div class="card shadow border-0 rounded-4">
+        <div class="card-body p-4">
+            <h2 class="text-danger mb-3">Delete Doctor</h2>
+
+            <p>
+                Are you sure you want to delete
+                <strong>@Model.Doctor?.FullName</strong>?
+            </p>
+
+            <form method="post">
+                <button type="submit" class="btn btn-danger">
+                    Yes, Delete
+                </button>
+
+                <a asp-page="/Doctors/Index"
+                   class="btn btn-secondary">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

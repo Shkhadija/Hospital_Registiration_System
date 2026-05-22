@@ -1,0 +1,59 @@
+﻿@page "{slug}"
+@model HospitalRegistrationSystem.Pages.Doctors.EditModel
+
+@{
+    ViewData["Title"] = "Edit Doctor";
+}
+
+<h2 class="mb-4">Edit Doctor</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Doctor.Id" />
+    <input type="hidden" asp-for="Doctor.CreatedAt" />
+
+    <div class="mb-3">
+        <label asp-for="Doctor.FullName" class="form-label"></label>
+        <input asp-for="Doctor.FullName" class="form-control" />
+        <span asp-validation-for="Doctor.FullName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Doctor.Specialty" class="form-label"></label>
+        <input asp-for="Doctor.Specialty" class="form-control" />
+        <span asp-validation-for="Doctor.Specialty" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Doctor.ExperienceYears" class="form-label"></label>
+        <input asp-for="Doctor.ExperienceYears" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Doctor.RoomNumber" class="form-label"></label>
+        <input asp-for="Doctor.RoomNumber" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Doctor.ImageUrl" class="form-label">Photo URL</label>
+        <input asp-for="Doctor.ImageUrl" class="form-control" placeholder="https://..." />
+        @if (!string.IsNullOrWhiteSpace(Model.Doctor.ImageUrl))
+        {
+            <img src="@Model.Doctor.ImageUrl" class="mt-2 rounded" style="height:80px; object-fit:cover;" />
+        }
+    </div>
+    <div class="mb-3">
+        <label asp-for="Doctor.Email" class="form-label"></label>
+        <input asp-for="Doctor.Email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Doctor.Phone" class="form-label"></label>
+        <input asp-for="Doctor.Phone" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-page="/Doctors/Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

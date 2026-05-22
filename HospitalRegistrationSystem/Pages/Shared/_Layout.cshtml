@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MediCore Hospital</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HospitalRegistrationSystem.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-4">
+            <div class="container">
+
+                <!-- Logo -->
+                <a class="navbar-brand fw-bold fs-3"
+                   asp-page="/Index">
+                    MediCore Hospital
+                </a>
+
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar Content -->
+                <div class="collapse navbar-collapse" id="mainNavbar">
+
+                    <!-- Sol Menyu -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <!-- Doctors link hər kəs üçün -->
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-page="/Doctors/Index">
+                                Doctors
+                            </a>
+                        </li>
+
+                        @if (User.Identity?.IsAuthenticated ?? false)
+                        {
+                            <!-- Dashboard yalnız Patient olmayanlar üçün -->
+                            @if (!User.IsInRole("Patient"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       asp-page="/Dashboard/Index">
+                                        Dashboard
+                                    </a>
+                                </li>
+                            }
+
+                            <!-- Patient -->
+                            @if (User.IsInRole("Patient"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       asp-page="/Appointments/MyAppointments">
+                                        My Appointments
+                                    </a>
+                                </li>
+                            }
+
+                            <!-- Doctor -->
+                            @if (User.IsInRole("Doctor"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       asp-page="/Appointments/MyAppointments">
+                                        My Appointments
+                                    </a>
+                                </li>
+                            }
+
+                            <!-- Receptionist və Admin -->
+                            @if (User.IsInRole("Admin") || User.IsInRole("Receptionist"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       asp-page="/Patients/Create">
+                                        Patient Registration
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       asp-page="/Appointments/Index">
+                                        Appointments & Queue
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       asp-page="/Billing/Reports">
+                                        Billing & Reports
+                                    </a>
+                                </li>
+                            }
+
+                            <!-- Admin -->
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       asp-page="/Admin/Users">
+                                        User Management
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+
+                    <!-- Sağ tərəf -->
+                    <ul class="navbar-nav align-items-lg-center">
+
+                        @if (User.Identity?.IsAuthenticated ?? false)
+                        {
+                            <!-- İstifadəçi adı -->
+                            <li class="nav-item">
+                                <span class="nav-link text-info fw-semibold">
+                                    👤 @User.Identity.Name
+                                    (@User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value)
+                                </span>
+                            </li>
+
+                            <!-- Logout -->
+                            <li class="nav-item">
+                                <a class="nav-link text-warning fw-semibold"
+                                   asp-page="/Account/Logout">
+                                    🚪 Logout
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <!-- Sign In -->
+                            <li class="nav-item">
+                                <a class="btn btn-light text-primary fw-semibold rounded-pill px-4 ms-lg-3"
+                                   asp-page="/Account/Login">
+                                    🔐 Sign In
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 text-white"
+            style="background: linear-gradient(135deg, #0d6efd, #00c6ff);">
+        <div class="container py-5">
+
+            <div class="row g-4">
+
+                <!-- Brand -->
+                <div class="col-md-4">
+                    <h4 class="fw-bold">🏥 MediCore Hospital</h4>
+                    <p class="mb-0">
+                        Advanced healthcare with compassionate specialists.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a asp-page="/Index"
+                               class="text-white text-decoration-none">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-page="/Doctors/Index"
+                               class="text-white text-decoration-none">
+                                Doctors
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-page="/Account/Login"
+                               class="text-white text-decoration-none">
+                                Sign In
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Contact</h5>
+                    <p class="mb-1">📞 +994 50 123 45 67</p>
+                    <p class="mb-1">✉️ info@medicore.az</p>
+                    <p class="mb-0">📍 Baku, Azerbaijan</p>
+                </div>
+
+            </div>
+
+            <hr class="my-4 border-white opacity-25" />
+
+            <div class="text-center">
+                <small>
+                    © 2026 MediCore Hospital. All rights reserved.
+                </small>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress"></div>
+
+    <!-- Back To Top Button -->
+    <button id="backToTop"
+            class="btn btn-primary rounded-circle shadow-lg">
+        ↑
+    </button>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const progressBar = document.getElementById("scrollProgress");
+            const backToTop = document.getElementById("backToTop");
+
+            window.addEventListener("scroll", function () {
+                // Progress bar
+                const scrollTop = document.documentElement.scrollTop;
+                const scrollHeight =
+                    document.documentElement.scrollHeight -
+                    document.documentElement.clientHeight;
+
+                const percent = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = percent + "%";
+
+                // Back to top button
+                if (scrollTop > 300) {
+                    backToTop.style.display = "block";
+                } else {
+                    backToTop.style.display = "none";
+                }
+            });
+
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+</body>
+</html>

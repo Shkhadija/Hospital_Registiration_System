@@ -1,0 +1,96 @@
+@page
+@model HospitalRegistrationSystem.Pages.Appointments.MyAppointmentsModel
+
+@{
+    ViewData["Title"] = "My Appointments";
+}
+
+<div class="container mt-4">
+
+    <!-- Başlıq -->
+    <div class="mb-4">
+        <h1 class="fw-bold">📅 My Appointments</h1>
+        <p class="text-muted">
+            View your booked appointments.
+        </p>
+    </div>
+
+    <!-- DEBUG INFO -->
+    <div class="alert alert-secondary mb-4">
+        <strong>Debug Info:</strong><br />
+        Total Appointments in DB: @Model.DebugTotalAppointments<br />
+        Your Patient ID: @(Model.DebugUserPatientId?.ToString() ?? "NULL")<br />
+        Your Full Name: @Model.DebugUserFullName
+    </div>
+
+    @if (Model.Appointments.Any())
+    {
+        <div class="card shadow-sm border-0 rounded-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Doctor</th>
+                                <th>Specialty</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                              
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var appointment in Model.Appointments)
+                            {
+                                <tr>
+                                    <!-- Doctor -->
+                                    <td>
+                                        @appointment.Doctor?.FullName
+                                    </td>
+
+                                    <!-- Specialty -->
+                                    <td>
+                                        <span class="badge bg-secondary">
+                                            @appointment.Doctor?.Specialty
+                                        </span>
+                                    </td>
+
+                                    <!-- Date -->
+                                    <td>
+                                        @appointment.AppointmentDate.ToString("dd.MM.yyyy HH:mm")
+                                    </td>
+
+                                    <!-- Status -->
+                                    <td>
+                                        <span class="badge
+                                                    @(appointment.Status == "Pending" ? "bg-warning text-dark" :
+                                                                                            appointment.Status == "Confirmed" ? "bg-success" :
+                                                                                            appointment.Status == "Completed" ? "bg-primary" :
+                                                                                            appointment.Status == "Cancelled" ? "bg-danger" :
+                                                                                            "bg-secondary")">
+                                                                                                         @appointment.Status
+                                                                                                     </span>
+                                                                                                 </td>
+
+                                   
+
+                                    <!-- Notes -->
+                                    <td>
+                                        @appointment.Notes
+                                    </td>
+                                </tr>
+                                                }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info rounded-4">
+            You do not have any appointments yet.
+        </div>
+    }
+
+</div>

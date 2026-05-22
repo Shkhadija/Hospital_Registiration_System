@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Migrations\\20260520071409_AddApiLogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HospitalRegistrationSystem\\Migrations\\20260520071409_AddApiLogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|c:\\users\\lenovo\\downloads\\hospitalregistrationsystemoutput\\hospitalregistrationsystem\\middleware\\requestresponseloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|solutionrelative:hospitalregistrationsystem\\middleware\\requestresponseloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|c:\\users\\lenovo\\downloads\\hospitalregistrationsystemoutput\\hospitalregistrationsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|solutionrelative:hospitalregistrationsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|c:\\users\\lenovo\\downloads\\hospitalregistrationsystemoutput\\hospitalregistrationsystem\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|solutionrelative:hospitalregistrationsystem\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|c:\\users\\lenovo\\downloads\\hospitalregistrationsystemoutput\\hospitalregistrationsystem\\models\\apilog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|solutionrelative:hospitalregistrationsystem\\models\\apilog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|c:\\users\\lenovo\\downloads\\hospitalregistrationsystemoutput\\hospitalregistrationsystem\\pages\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|solutionrelative:hospitalregistrationsystem\\pages\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|c:\\users\\lenovo\\downloads\\hospitalregistrationsystemoutput\\hospitalregistrationsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|solutionrelative:hospitalregistrationsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|c:\\users\\lenovo\\downloads\\hospitalregistrationsystemoutput\\hospitalregistrationsystem\\pages\\doctors\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|solutionrelative:hospitalregistrationsystem\\pages\\doctors\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|c:\\users\\lenovo\\downloads\\hospitalregistrationsystemoutput\\hospitalregistrationsystem\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02A84B6A-8BFD-47F9-9C33-F6C8114E1A21}|HospitalRegistrationSystem\\HospitalRegistrationSystem.csproj|solutionrelative:hospitalregistrationsystem\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260520071409_AddApiLogs.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Migrations\\20260520071409_AddApiLogs.cs",
+              "RelativeDocumentMoniker": "HospitalRegistrationSystem\\Migrations\\20260520071409_AddApiLogs.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Migrations\\20260520071409_AddApiLogs.cs",
+              "RelativeToolTip": "HospitalRegistrationSystem\\Migrations\\20260520071409_AddApiLogs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T07:14:09.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Program.cs",
+              "RelativeDocumentMoniker": "HospitalRegistrationSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Program.cs",
+              "RelativeToolTip": "HospitalRegistrationSystem\\Program.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAuwHYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T07:06:15.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RequestResponseLoggingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Middleware\\RequestResponseLoggingMiddleware.cs",
+              "RelativeDocumentMoniker": "HospitalRegistrationSystem\\Middleware\\RequestResponseLoggingMiddleware.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Middleware\\RequestResponseLoggingMiddleware.cs",
+              "RelativeToolTip": "HospitalRegistrationSystem\\Middleware\\RequestResponseLoggingMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T07:06:05.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "HospitalRegistrationSystem\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "HospitalRegistrationSystem\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwCAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T07:04:47.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApiLog.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Models\\ApiLog.cs",
+              "RelativeDocumentMoniker": "HospitalRegistrationSystem\\Models\\ApiLog.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Models\\ApiLog.cs",
+              "RelativeToolTip": "HospitalRegistrationSystem\\Models\\ApiLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T07:04:34.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Pages\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "HospitalRegistrationSystem\\Pages\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Pages\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "HospitalRegistrationSystem\\Pages\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAgwAsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-19T16:27:02.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "HospitalRegistrationSystem\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "HospitalRegistrationSystem\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAPUBAAAAAAAAAAAiwLoCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-19T16:26:24.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Pages\\Doctors\\Edit.cshtml",
+              "RelativeDocumentMoniker": "HospitalRegistrationSystem\\Pages\\Doctors\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Pages\\Doctors\\Edit.cshtml",
+              "RelativeToolTip": "HospitalRegistrationSystem\\Pages\\Doctors\\Edit.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwCkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-19T10:18:08.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "HospitalRegistrationSystem\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\HospitalRegistrationSystemOutput\\HospitalRegistrationSystem\\Pages\\Index.cshtml",
+              "RelativeToolTip": "HospitalRegistrationSystem\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAANIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-19T10:04:10.666Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

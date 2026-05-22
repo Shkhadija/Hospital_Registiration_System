@@ -1,0 +1,67 @@
+﻿@page "{id:int}"
+@model HospitalRegistrationSystem.Pages.Appointments.EditStatusModel
+
+@{
+    ViewData["Title"] = "Update Appointment Status";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+
+                    <h2 class="fw-bold mb-4">
+                        🔄 Update Appointment Status
+                    </h2>
+
+                    <div class="mb-3">
+                        <strong>Patient:</strong>
+                        @Model.Appointment.Patient?.FullName
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Doctor:</strong>
+                        @Model.Appointment.Doctor?.FullName
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Date:</strong>
+                        @Model.Appointment.AppointmentDate
+                        .ToString("dd.MM.yyyy HH:mm")
+                    </div>
+
+                    <form method="post">
+                        <input type="hidden"
+                               asp-for="Appointment.Id" />
+
+                        <div class="mb-3">
+                            <label asp-for="Appointment.Status"
+                                   class="form-label">
+                                Status
+                            </label>
+
+                            <select asp-for="Appointment.Status"
+                                    asp-items="Model.StatusOptions"
+                                    class="form-select">
+                            </select>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-primary">
+                            Save Changes
+                        </button>
+
+                        <a asp-page="/Appointments/Index"
+                           class="btn btn-outline-secondary">
+                            Cancel
+                        </a>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,213 @@
+@page "{slug}"
+@model HospitalRegistrationSystem.Pages.Doctors.DetailsModel
+
+@{
+    ViewData["Title"] = Model.Doctor?.FullName ?? "Doctor Details";
+}
+
+@if (Model.Doctor == null)
+{
+    <div class="container py-5">
+        <div class="alert alert-warning rounded-4 shadow-sm">
+            Doctor not found.
+        </div>
+    </div>
+}
+else
+{
+    <div class="container py-5">
+
+        <!-- Hero Card -->
+        <div class="premium-card p-0 overflow-hidden mb-5">
+
+            <div class="row g-0">
+
+                <!-- Doctor Image -->
+                <div class="col-lg-4">
+                    <img src="@(string.IsNullOrWhiteSpace(Model.Doctor.ImageUrl)
+                                                 ? "/images/default-doctor.png"
+                                                 : Model.Doctor.ImageUrl)"
+                                                                         class="img-fluid w-100 h-100 object-fit-cover"
+                                                                         style="min-height: 450px;"
+                                                                         alt="@Model.Doctor.FullName" />
+                                                                </div>
+
+                <!-- Doctor Info -->
+                <div class="col-lg-8">
+                    <div class="p-5">
+
+                        <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill mb-3">
+                            @Model.Doctor.Specialty
+                        </span>
+
+                        <h1 class="fw-bold display-5 mb-3">
+                            @(Model.Doctor.FullName.StartsWith("Dr.") ? Model.Doctor.FullName : "Dr. " + Model.Doctor.FullName)
+                        </h1>
+
+                        <p class="text-muted fs-5 mb-4">
+                            Highly experienced specialist dedicated to providing
+                            exceptional patient care.
+                        </p>
+
+                        <div class="row g-4 mb-4">
+
+                            <div class="col-md-4">
+                                <div class="text-center premium-card h-100">
+                                    <div class="service-icon">🎓</div>
+                                    <h5 class="fw-bold">
+                                        @Model.Doctor.ExperienceYears+
+                                    </h5>
+                                    <p class="text-muted mb-0">
+                                        Years Experience
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="text-center premium-card h-100">
+                                    <div class="service-icon">⭐</div>
+                                    <h5 class="fw-bold">4.9/5</h5>
+                                    <p class="text-muted mb-0">
+                                        Patient Rating
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="text-center premium-card h-100">
+                                    <div class="service-icon">👥</div>
+                                    <h5 class="fw-bold">5000+</h5>
+                                    <p class="text-muted mb-0">
+                                        Happy Patients
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3">
+
+                            <a asp-page="/Appointments/Create"
+                               asp-route-doctorSlug="@Model.Doctor.Slug"
+                               class="btn btn-primary btn-lg rounded-pill px-5 btn-premium">
+                                📅 Book Appointment
+                            </a>
+
+                            <a asp-page="/Doctors/Index"
+                               class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                                ← Back to Doctors
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Doctor -->
+        <div class="premium-card mb-5">
+            <h2 class="fw-bold mb-4">About Doctor</h2>
+
+            <p class="text-muted fs-5">
+                @(string.IsNullOrWhiteSpace(Model.Doctor.Bio)
+                            ? "This doctor is a highly qualified specialist with extensive experience in diagnosing and treating patients with professionalism and care."
+                            : Model.Doctor.Bio)
+        </p>
+    </div>
+
+        <!-- Working Hours -->
+        <div class="premium-card mb-5">
+            <h2 class="fw-bold mb-4">Working Hours</h2>
+
+            <div class="row g-3">
+
+                <div class="col-md-3">
+                    <div class="glass-card p-3 text-center">
+                        <strong>Monday</strong><br />
+                        09:00 - 18:00
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="glass-card p-3 text-center">
+                        <strong>Tuesday</strong><br />
+                        09:00 - 18:00
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="glass-card p-3 text-center">
+                        <strong>Wednesday</strong><br />
+                        09:00 - 18:00
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="glass-card p-3 text-center">
+                        <strong>Thursday</strong><br />
+                        09:00 - 18:00
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="glass-card p-3 text-center">
+                        <strong>Friday</strong><br />
+                        09:00 - 18:00
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="glass-card p-3 text-center bg-light">
+                        <strong>Saturday</strong><br />
+                        Closed
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="glass-card p-3 text-center bg-light">
+                        <strong>Sunday</strong><br />
+                        Closed
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Quick Facts -->
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="premium-card text-center h-100">
+                    <div class="service-icon">🏥</div>
+                    <h5 class="fw-bold">Modern Equipment</h5>
+                    <p class="text-muted">
+                        State-of-the-art diagnostic and treatment tools.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="premium-card text-center h-100">
+                    <div class="service-icon">🩺</div>
+                    <h5 class="fw-bold">Personalized Care</h5>
+                    <p class="text-muted">
+                        Tailored treatment plans for every patient.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="premium-card text-center h-100">
+                    <div class="service-icon">📞</div>
+                    <h5 class="fw-bold">Easy Booking</h5>
+                    <p class="text-muted">
+                        Schedule appointments online in seconds.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+}

@@ -1,0 +1,199 @@
+@page
+@model HospitalRegistrationSystem.Pages.Patients.CreateModel
+
+@{
+    ViewData["Title"] = "Patient Registration";
+}
+
+<section class="py-5">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div>
+                <h1 class="display-5 fw-bold mb-2">📝 Patient Registration</h1>
+                <p class="text-muted mb-0">Register a new patient in the hospital system.</p>
+            </div>
+            <a asp-page="Index" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                ← Back to Patients
+            </a>
+        </div>
+
+        <div class="card border-0 shadow-lg rounded-4">
+            <div class="card-body p-5">
+
+                <form method="post">
+
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div asp-validation-summary="All" class="alert alert-danger"></div>
+                    }
+
+                    <div class="row g-4">
+
+                        <!-- Full Name -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.FullName" class="form-label fw-semibold">Full Name</label>
+                            <input asp-for="Patient.FullName" class="form-control form-control-lg" />
+                            <span asp-validation-for="Patient.FullName" class="text-danger"></span>
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.BirthDate" class="form-label fw-semibold">Date of Birth</label>
+                            <input asp-for="Patient.BirthDate" type="date" class="form-control form-control-lg" />
+                            <span asp-validation-for="Patient.BirthDate" class="text-danger"></span>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.Gender" class="form-label fw-semibold">Gender</label>
+                            <select asp-for="Patient.Gender" class="form-select form-select-lg">
+                                <option value="">Select Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                            <span asp-validation-for="Patient.Gender" class="text-danger"></span>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.Phone" class="form-label fw-semibold">Phone</label>
+                            <input asp-for="Patient.Phone" class="form-control form-control-lg" />
+                            <span asp-validation-for="Patient.Phone" class="text-danger"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.Email" class="form-label fw-semibold">Email</label>
+                            <input asp-for="Patient.Email" class="form-control form-control-lg" />
+                            <span asp-validation-for="Patient.Email" class="text-danger"></span>
+                        </div>
+
+                        <!-- FIN Code -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.FinCode" class="form-label fw-semibold">FIN Code</label>
+                            <input asp-for="Patient.FinCode" class="form-control form-control-lg" placeholder="e.g. 5FZ8T2R" />
+                            <span asp-validation-for="Patient.FinCode" class="text-danger"></span>
+                        </div>
+
+                        <!-- Blood Group -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.BloodGroup" class="form-label fw-semibold">Blood Group</label>
+                            <select asp-for="Patient.BloodGroup" class="form-select form-select-lg">
+                                <option value="">Select Blood Group</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                            </select>
+                        </div>
+
+                        <!-- Insurance Status -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.InsuranceStatus" class="form-label fw-semibold">Insurance Status</label>
+                            <select asp-for="Patient.InsuranceStatus" class="form-select form-select-lg">
+                                <option value="">Select</option>
+                                <option value="Insured">Insured</option>
+                                <option value="Not Insured">Not Insured</option>
+                            </select>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="col-12">
+                            <label asp-for="Patient.Address" class="form-label fw-semibold">Address</label>
+                            <textarea asp-for="Patient.Address" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Patient.Address" class="text-danger"></span>
+                        </div>
+
+                        <!-- Allergies -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.Allergies" class="form-label fw-semibold">Allergies</label>
+                            <input asp-for="Patient.Allergies" class="form-control form-control-lg" placeholder="e.g. Penicillin, Pollen" />
+                        </div>
+
+                        <!-- Chronic Diseases -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.ChronicDiseases" class="form-label fw-semibold">Chronic Diseases</label>
+                            <input asp-for="Patient.ChronicDiseases" class="form-control form-control-lg" placeholder="e.g. Diabetes, Hypertension" />
+                        </div>
+
+                        <!-- Emergency Contact -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.EmergencyContact" class="form-label fw-semibold">Emergency Contact</label>
+                            <input asp-for="Patient.EmergencyContact" class="form-control form-control-lg" placeholder="Name and phone" />
+                        </div>
+
+                        <!-- Priority -->
+                        <div class="col-md-6">
+                            <label asp-for="Patient.Priority" class="form-label fw-semibold">Priority</label>
+                            <select asp-for="Patient.Priority" class="form-select form-select-lg">
+                                <option value="Normal">Normal</option>
+                                <option value="Urgent">Urgent</option>
+                                <option value="Emergency">Emergency</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <hr class="my-5" />
+
+                    <h4 class="fw-bold mb-3">🔐 Login Account</h4>
+
+                    <div class="form-check mb-4">
+                        <input asp-for="CreateUserAccount" class="form-check-input" id="createAccountCheck" />
+                        <label asp-for="CreateUserAccount" class="form-check-label" for="createAccountCheck">
+                            Create login account for this patient
+                        </label>
+                    </div>
+
+                    <div id="accountFields" class="row g-4" style="display:none !important">
+                        <div class="col-md-6">
+                            <label asp-for="Username" class="form-label fw-semibold">Username</label>
+                            <input asp-for="Username" class="form-control form-control-lg" />
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Password" class="form-label fw-semibold">Password</label>
+                            <input asp-for="Password" type="password" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+
+                    <div class="mt-5 d-flex gap-3">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">
+                            💾 Save Patient
+                        </button>
+                        <a asp-page="Index" class="btn btn-outline-secondary btn-lg rounded-pill px-5">
+                            Cancel
+                        </a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const check = document.getElementById('createAccountCheck');
+        const fields = document.getElementById('accountFields');
+
+        function toggleFields() {
+            if (check.checked) {
+                fields.style.setProperty('display', 'flex', 'important');
+            } else {
+                fields.style.setProperty('display', 'none', 'important');
+            }
+        }
+
+        check.addEventListener('change', toggleFields);
+        // On page load (e.g. validation failed with checkbox checked)
+        toggleFields();
+    </script>
+}

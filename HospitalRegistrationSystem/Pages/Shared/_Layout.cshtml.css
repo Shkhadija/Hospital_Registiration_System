@@ -1,0 +1,42 @@
+﻿/* Layout-specific overrides */
+
+a.navbar-brand {
+    white-space: normal;
+    word-break: break-all;
+}
+
+a {
+    color: #0056b3;
+}
+
+    a:hover {
+        color: #003d82;
+    }
+
+.btn-primary {
+    color: #fff;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #003d82;
+}
+
+.border-top {
+    border-top: 1px solid #d6e4f0 !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #d6e4f0 !important;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 86, 179, .08);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}

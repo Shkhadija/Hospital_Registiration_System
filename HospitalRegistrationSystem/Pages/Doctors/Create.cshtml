@@ -1,0 +1,50 @@
+﻿@page
+@model HospitalRegistrationSystem.Pages.Doctors.CreateModel
+
+@{
+    ViewData["Title"] = "Add Doctor";
+}
+
+<h2 class="mb-4">Add New Doctor</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Doctor.FullName" class="form-label"></label>
+        <input asp-for="Doctor.FullName" class="form-control" />
+        <span asp-validation-for="Doctor.FullName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Doctor.Specialty" class="form-label"></label>
+        <input asp-for="Doctor.Specialty" class="form-control" />
+        <span asp-validation-for="Doctor.Specialty" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Doctor.ExperienceYears" class="form-label"></label>
+        <input asp-for="Doctor.ExperienceYears" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Doctor.RoomNumber" class="form-label"></label>
+        <input asp-for="Doctor.RoomNumber" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Doctor.Email" class="form-label"></label>
+        <input asp-for="Doctor.Email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Doctor.Phone" class="form-label"></label>
+        <input asp-for="Doctor.Phone" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Save Doctor
+    </button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
